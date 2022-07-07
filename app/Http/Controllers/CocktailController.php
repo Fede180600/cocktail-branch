@@ -26,7 +26,7 @@ class CocktailController extends Controller
      */
     public function create()
     {
-        dd('ciao');
+        return view('cocktail.create');
     }
 
     /**
@@ -37,7 +37,12 @@ class CocktailController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cocktail_data = $request->all();
+        $cocktail = new Cocktail();
+        $cocktail->fill($cocktail_data);
+        $cocktail->save();
+
+        return redirect()->route('cocktails.index');
     }
 
     /**
