@@ -9,8 +9,12 @@ class Cocktail extends Model
     protected $fillable = [
         'name',
         'glass_type',
-        'ingredients',
         'type_of_preparation',
         'price'
     ];
+
+    public function ingredients()
+    {
+       return $this->belongsToMany('App\Ingredient');    
+    }
 }

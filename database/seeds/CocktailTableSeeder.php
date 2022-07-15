@@ -16,7 +16,6 @@ class CocktailTableSeeder extends Seeder
             $cocktail = new Cocktail();
             $cocktail->name = 'Jagerbomb ' . $i;
             $cocktail->glass_type = 'rock alto';
-            $cocktail->ingredients = 'jagermeister e redbull';
             $cocktail->type_of_preparation = 'build';
             $cocktail->price = 5 + $i;
             $cocktail->save();

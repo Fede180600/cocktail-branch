@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Cocktail;
-
+use App\Ingredient;
 class CocktailController extends Controller
 {
     /**
@@ -15,7 +15,7 @@ class CocktailController extends Controller
     public function index()
     {
         $cocktails = Cocktail::all();
-        
+        $ingredients = Ingredient::all();
         return view('cocktail.index', compact('cocktails'));
     }
 
